@@ -12,7 +12,7 @@ export default function Header() {
     return (
         <Navbar className="bg-red">
             <NavbarBrand>
-                <p className="font-bold text-inherit">CES'Eat</p>
+                <p className="font-bold text-inherit">CES&apos;Eat</p>
             </NavbarBrand>
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem>
