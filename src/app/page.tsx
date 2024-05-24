@@ -1,16 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Header from "./components/header";
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import { Component } from "react";
+import { Component, use } from "react";
+import { NextUIProvider } from "@nextui-org/system";
 
 export default function Home() {
   return (
-    <div className="h-screen">
-      <Header />
-
-      <div className="bg-beige">
+    <NextUIProvider className="h-screen bg-beige">
+        <Header />
         <div className="container mx-auto">
           <div className="flex flex-wrap place-content-center">
             <Card className="m-8">
@@ -60,7 +61,6 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </div>
-    </div>
+    </NextUIProvider>
   );
 }
