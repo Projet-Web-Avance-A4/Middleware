@@ -1,3 +1,5 @@
+'use client'
+
 import {
     Navbar,
     NavbarBrand,
@@ -7,21 +9,30 @@ import {
 import { Button } from "@nextui-org/button";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, DropdownSection } from "@nextui-org/react";
 import Link from "next/link";
+import { Head } from "next/document";
+
+interface Header {
+    title: string
+    showStats?: boolean
+    showSponsor?: boolean
+}
 
 // Composant Header (entête)
-export default function Header() {
+export default function Header(props: Header) {
     return (
         <Navbar className="bg-red">
             <NavbarBrand>
                 <p className="font-bold text-inherit">CES&apos;Eat</p>
             </NavbarBrand>
             <NavbarContent justify="center">
-                <p>Restaurateur</p>
+                <p>{props.title}</p>
             </NavbarContent>
             <NavbarContent justify="end">
-                <NavbarItem className="hidden lg:flex">
-                    <Link href="#">Statistiques</Link>
-                </NavbarItem>
+                {props.showStats &&
+                    <NavbarItem className="hidden lg:flex">
+                        <Link href="#">Statistiques</Link>
+                    </NavbarItem>
+                }
                 <NavbarItem>
                     <Dropdown className="text-black">
                         <DropdownTrigger>
@@ -40,12 +51,14 @@ export default function Header() {
                                 >
                                     <p>Mon compte</p>
                                 </DropdownItem>
-                                <DropdownItem
-                                    key="sponsor"
-                                    description="Parrainer un ami restaurateur"
-                                >
-                                    Parrainage
-                                </DropdownItem>
+                                {props.showSponsor &&
+                                    <DropdownItem
+                                        key="sponsor"
+                                        description="Parrainer un ami"
+                                    >
+                                        Parrainage
+                                    </DropdownItem>
+                                }
                             </DropdownSection>
                             <DropdownSection title="Danger">
                                 <DropdownItem
