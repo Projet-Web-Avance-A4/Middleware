@@ -7,7 +7,7 @@ import Link from "next/link";
 
 interface iCustomCard {
   title: string
-  description: string
+  description?: string
   href: string
   btnText: string
 }
