@@ -9,7 +9,6 @@ import {
 import { Button } from "@nextui-org/button";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, DropdownSection } from "@nextui-org/react";
 import Link from "next/link";
-import { Head } from "next/document";
 
 interface Header {
     title: string
@@ -22,7 +21,7 @@ export default function Header(props: Header) {
     return (
         <Navbar className="bg-red">
             <NavbarBrand>
-                <p className="font-bold text-inherit">CES&apos;Eat</p>
+                <Link href={"/"}><p className="font-bold text-inherit">CES&apos;Eat</p></Link>
             </NavbarBrand>
             <NavbarContent justify="center">
                 <p>{props.title}</p>
@@ -49,7 +48,7 @@ export default function Header(props: Header) {
                                     key="consult"
                                     description="Mes informations"
                                 >
-                                    <p>Mon compte</p>
+                                    <Link href={"/account"}>Mon compte</Link>
                                 </DropdownItem>
                                 {props.showSponsor &&
                                     <DropdownItem
