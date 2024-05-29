@@ -3,9 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from "../components/header";
 import { NextUIProvider } from "@nextui-org/system";
-import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import { Button } from '@nextui-org/button';
-import Link from "next/link";
 import CustomCard from '../components/customcard';
 
 const DownloadComponentsPage: React.FC = () => {
