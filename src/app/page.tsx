@@ -3,15 +3,19 @@ import { NextUIProvider } from "@nextui-org/system";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import CustomCard from "./components/customcard";
+import PortalCard from "./components/portalCard";
 
 export default function Home() {
   return (
     <NextUIProvider className=" flex flex-col min-h-screen bg-beige">
       <Header title="Restaurateur" showStats={true} showSponsor={true}/>
-      <div className="flex-grow container mx-auto">
-        <div className="flex flex-wrap place-content-center">
-          <CustomCard title="Commandes" description="Suivre et valider des commandes" href="#" btnText="Accéder" />
-          
+      <div className="flex-grow container ">
+        <div className="grid place-content-center">
+   {/*        <CustomCard title="Commandes" description="Suivre et valider des commandes" href="#" btnText="Accéder" /> */}
+          <PortalCard href="#" btnText="Client" />
+          <PortalCard href="#" btnText="Client" />
+          <PortalCard href="#" btnText="Client" />
+          <PortalCard href="#" btnText="Client" />
         </div>
       </div>
       <Footer/>
