@@ -1,3 +1,5 @@
+"use client";
+
 import {
     Navbar,
     NavbarBrand,
@@ -10,7 +12,6 @@ import Link from "next/link";
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import { useState } from 'react';
 import LegalModal from '../components/credits';
-
 
 
 // Composant Header (entête)

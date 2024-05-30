@@ -43,22 +43,7 @@ export default function Header(props: Header) {
                             </Button>
                         </DropdownTrigger>
                         <DropdownMenu variant="faded" aria-label="Account dropdown menu with description">
-                            <DropdownSection title="Actions" showDivider>
-                                <DropdownItem
-                                    key="consult"
-                                    description="Mes informations"
-                                >
-                                    <Link href={"/account"}>Mon compte</Link>
-                                </DropdownItem>
-                                {props.showSponsor &&
-                                    <DropdownItem
-                                        key="sponsor"
-                                        description="Parrainer un ami"
-                                    >
-                                        Parrainage
-                                    </DropdownItem>
-                                }
-                            </DropdownSection>
+               
                             <DropdownSection title="Danger">
                                 <DropdownItem
                                     key="delete"
