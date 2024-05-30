@@ -9,7 +9,7 @@ import { Button } from "@nextui-org/button";
 export default function AccountInfo() {
     return (
         <NextUIProvider className="h-screen bg-beige">
-            <Header title="Restaurateur" showStats={true} showSponsor={true} />
+            <Header title="Restaurateur" showMyAccount={true} showStats={true} showSponsor={true} />
             <div className="container flex justify-center mx-auto">
                 <Card className="m-8 flex-grow max-w-3xl">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
