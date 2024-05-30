@@ -1,19 +1,20 @@
 "use client";
 
-import { NextUIProvider } from "@nextui-org/system";
-import Header from "./components/header";
-import CustomCard from "./components/customcard";
+import React from 'react';
+import RegisterForm from './components/registerform';
+import { NextUIProvider } from '@nextui-org/system';
+import Header from './components/header';
 
-export default function Home() {
-  return (
-    <NextUIProvider className="h-screen bg-beige">
-      <Header />
-      <div className="container mx-auto">
-        <div className="flex flex-wrap place-content-center">
-          <CustomCard title="Composants" description="Télécharger le composant de votre choix" href="/download-components"
-            btnText="Accéder" />
-        </div>
-      </div>
-    </NextUIProvider>
-  );
-}
+const Register: React.FC = () => {
+    return (
+        <NextUIProvider className="h-screen bg-beige">
+            <Header />
+            <div className="container mx-auto">
+                <h1 className="font-bold text-large text-black text-center">Créer un compte</h1>
+                <RegisterForm />
+            </div>
+        </NextUIProvider>
+    );
+};
+
+export default Register;
