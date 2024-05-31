@@ -8,7 +8,7 @@ import PortalCard from "./components/portalCard";
 export default function Home() {
   return (
     <NextUIProvider className=" flex flex-col min-h-screen bg-beige">
-      <Header title="Portail de redirection" showStats={false} showSponsor={false}/>
+      <Header title="Portail de redirection" showMyAccount={false} showStats={false} showSponsor={false}/>
       <div className="flex-grow container ">
         <div className="grid place-content-center">
           <PortalCard href="#" btnText="Client" />
