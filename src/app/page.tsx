@@ -5,21 +5,24 @@ import Footer from "./components/footer";
 import CustomCard from "./components/customcard";
 import PortalCard from "./components/portalCard";
 
+
 export default function Home() {
+  const baseURL = "http://localhost";
+
   return (
     <NextUIProvider className=" flex flex-col min-h-screen bg-beige">
       <Header title="Portail de redirection" showMyAccount={false} showStats={false} showSponsor={false}/>
       <div className="flex-grow container ">
         <div className="grid place-content-center">
-          <PortalCard href="#" btnText="Client" />
-          <PortalCard href="#" btnText="Restaurateur" />
-          <PortalCard href="#" btnText="Livreur" />
-          <PortalCard href="#" btnText="Développeur" />
-          <PortalCard href="#" btnText="Service technique" />
-          <PortalCard href="#" btnText="Service commercial" />
+          <PortalCard href={baseURL} port="3000" btnText="Client" />
+          <PortalCard href={baseURL} port="3001" btnText="Restaurateur" />
+          <PortalCard href={baseURL} port="3002" btnText="Livreur" />
+          <PortalCard href={baseURL} port="3003" btnText="Développeur" />
+          <PortalCard href={baseURL} port="3004" btnText="Service technique" />
+          <PortalCard href={baseURL} port="3005" btnText="Service commercial" />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </NextUIProvider>
   );
 }
