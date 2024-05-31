@@ -17,7 +17,7 @@ const Register: React.FC = () => {
 
     return (
         <NextUIProvider className="h-screen bg-beige">
-            <Header />
+            <Header title={"Développeur"} />
             {!connectPage &&
                 <div>
                     <RegisterForm changeForm={changeForm} />

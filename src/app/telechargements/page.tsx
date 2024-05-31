@@ -28,7 +28,7 @@ const DownloadComponentsPage: React.FC = () => {
 
   return (
     <NextUIProvider className="h-screen bg-beige">
-      <Header />
+      <Header title={"Développeur"} showMyAccount={true} showSponsor={false} />
       <div className="container mx-auto">
         <h1 className="font-bold text-large text-black text-center">Téléchargement des Composants</h1>
         <ul>
