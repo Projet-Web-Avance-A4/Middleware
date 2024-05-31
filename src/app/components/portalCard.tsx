@@ -8,15 +8,21 @@ import Link from "next/link";
 interface iPortalCard {
   btnText: string
   href: string
+  port: string
 }
 
 // Composant Card
-export default function CustomCard(props: iPortalCard) {
+export default function PortalCard(props: iPortalCard) {
+
+  const handleRedirect = () => {
+    window.location.href = `${props.href}:${props.port}`;
+  };
+
     return (
         <NextUIProvider className="w-96">
             <Card className="m-4">
               <CardBody>
-                <Button as={Link} href={props.href}>
+                <Button onClick={handleRedirect}>
                   <p>{props.btnText}</p>
                 </Button>
               </CardBody>
@@ -24,3 +30,4 @@ export default function CustomCard(props: iPortalCard) {
         </NextUIProvider>
     );
 }
+
