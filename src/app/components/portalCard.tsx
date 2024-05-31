@@ -11,7 +11,7 @@ interface iPortalCard {
   port: string
 }
 
-// Composant Card
+// Composant PortalCard
 export default function PortalCard(props: iPortalCard) {
 
   const handleRedirect = () => {
