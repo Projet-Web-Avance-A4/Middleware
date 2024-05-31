@@ -1,7 +1,9 @@
 
 import { NextUIProvider } from "@nextui-org/system";
 import Header from "./components/header";
+import Footer from "./components/footer";
 import CustomCard from "./components/customcard";
+import PortalCard from "./components/portalCard";
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
           <CustomCard title="Livraisons" description="Suivre des livraisons" href="#" btnText="Accéder" />
         </div>
       </div>
+      <Footer/>
     </NextUIProvider>
   );
 }
