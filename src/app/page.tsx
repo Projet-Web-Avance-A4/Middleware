@@ -4,6 +4,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import CustomCard from "./components/customcard";
 import PortalCard from "./components/portalCard";
+import { FaUserLarge , FaChartColumn } from 'react-icons/fa6';
 
 export default function Home() {
   return (

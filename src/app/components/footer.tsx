@@ -1,15 +1,5 @@
 "use client";
-
-import {
-    Navbar,
-    NavbarBrand,
-    NavbarContent,
-    NavbarItem
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, DropdownSection } from "@nextui-org/react";
-import Link from "next/link";
-import { FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaPhone, FaEnvelope } from 'react-icons/fa6';
 import { useState } from 'react';
 import LegalModal from '../components/credits';
 
