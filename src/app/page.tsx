@@ -9,7 +9,7 @@ export default function Home() {
       <Header title="Restaurateur" showMyAccount={true} showStats={true} showSponsor={true}/>
       <div className="container mx-auto">
         <div className="flex flex-wrap place-content-center">
-          <CustomCard title="Commandes" description="Suivre et valider des commandes" href="#" btnText="Accéder" />
+          <CustomCard title="Commandes" description="Suivre et valider des commandes" href="/commandes" btnText="Accéder" />
           <CustomCard title="Articles" description="Créer, modifier, supprimer et consulter un article" href="#" btnText="Accéder" />
           <CustomCard title="Menus" description="Créer, modifier, supprimer et consulter un menu" href="#" btnText="Accéder" />
           <CustomCard title="Livraisons" description="Suivre des livraisons" href="#" btnText="Accéder" />
