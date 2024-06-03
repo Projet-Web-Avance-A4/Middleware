@@ -23,17 +23,14 @@ export default function Home() {
   }
 
   return (
-    <NextUIProvider className="h-screen bg-beige">
-      <Header title="Restaurateur" showMyAccount={true} showStats={true} showSponsor={true}/>
-      <div className="container mx-auto">
-        <div className="flex flex-wrap place-content-center">
-          <CustomCard title="Commandes" description="Suivre et valider des commandes" href="/commandes" btnText="Accéder" />
-          <CustomCard title="Articles" description="Créer, modifier, supprimer et consulter un article" href="#" btnText="Accéder" />
-          <CustomCard title="Menus" description="Créer, modifier, supprimer et consulter un menu" href="#" btnText="Accéder" />
-          <CustomCard title="Livraisons" description="Suivre des livraisons" href="#" btnText="Accéder" />
-        </div>
+    <NextUIProvider className=" flex flex-col min-h-screen bg-beige">
+      <Header title="Service Commercial" showMyAccount={true} showStats={false} showSponsor={true}/>
+      <div className="grid grid-cols-4 flex-grow place-content-center items-center h-80">
+        <div className="col-span-1"></div>
+        <div><CustomCard title="Clients" href="/clients" btnText="Accéder" icon={<FaUserLarge className="w-10 h-10" />}/></div>
+        <div><CustomCard title="Dashboard" href="#dashboardpage" btnText="Accéder" icon={<FaChartColumn className="w-10 h-10"/>}/></div>
       </div>
-      <div>
+      {/* <div>
                 <a
                     title="Consulter les mentions légales"
                     onClick={openModal}
@@ -42,7 +39,7 @@ export default function Home() {
                     <span>Notification pop-up</span>
                 </a>
                 <Notification title="Nouvelle notification" description="Une nouvelle mise à jour est disponible !" isOpen={isModalOpen} closeModal={closeModal} />
-        </div>
+        </div> */}
       <Footer/>
     </NextUIProvider>
   );

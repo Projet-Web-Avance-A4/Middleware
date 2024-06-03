@@ -23,18 +23,24 @@ import {
 import { FaPlus, FaCircleDot, FaChevronDown, FaMagnifyingGlass, FaRegTrashCan, FaPencil } from "react-icons/fa6"
 import { columns, users, statusOptions } from "../api/temp.data";
 import { capitalize } from "../utils/capitalize";
+import ThemeSwitch from "../components/ThemeSwitch";
+
+interface Table {
+    showStatusAction?: boolean
+    showDeleteAction?: boolean
+    showEditAction?: boolean
+}
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
     active: "success",
     paused: "danger",
-    vacation: "warning",
 };
 
 const INITIAL_VISIBLE_COLUMNS = ["name", "role", "status", "actions"];
 
 type User = typeof users[0];
 
-export default function App() {
+export default function App(props: Table) {
     const [filterValue, setFilterValue] = React.useState("");
     const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set([]));
     const [visibleColumns, setVisibleColumns] = React.useState<Selection>(new Set(INITIAL_VISIBLE_COLUMNS));
@@ -128,17 +134,25 @@ export default function App() {
                 return (
                     <div className="relative flex justify-end items-center gap-2">
 
+                        {props.showStatusAction &&
+                        <ThemeSwitch/>
+                        }
+
+                        {props.showEditAction &&
                         <Tooltip className="text-black" content="Modifier">
                             <Button isIconOnly radius="full" size="sm" variant="light">
                                 <FaPencil className="text-default-400" />
                             </Button>
                         </Tooltip>
+                        }
 
+                        {props.showDeleteAction &&
                         <Tooltip className="text-red" content="Supprimer">
                             <Button isIconOnly radius="full" size="sm" variant="light">
                                 <FaRegTrashCan className="text-default-400 text-red" />
                             </Button>
                         </Tooltip>
+                        }
 
                     </div>
                 );

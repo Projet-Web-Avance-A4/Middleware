@@ -3,7 +3,7 @@ import React from "react";
 /* EXEMPLE DE DONNEES PROVENANT DE LA BDD VIA L'API */
 const columns = [
   {name: "ID", uid: "id", sortable: true},
-  {name: "NAME", uid: "name", sortable: true},
+  {name: "NOM", uid: "name", sortable: true},
   {name: "AGE", uid: "age", sortable: true},
   {name: "ROLE", uid: "role", sortable: true},
   {name: "TEAM", uid: "team"},
@@ -15,7 +15,6 @@ const columns = [
 const statusOptions = [
   {name: "Active", uid: "active"},
   {name: "Paused", uid: "paused"},
-  {name: "Vacation", uid: "vacation"},
 ];
 
 const users = [
@@ -51,7 +50,7 @@ const users = [
     name: "William Howard",
     role: "C.M.",
     team: "Marketing",
-    status: "vacation",
+    status: "paused",
     age: "28",
     email: "william.howard@example.com",
   },
@@ -96,7 +95,7 @@ const users = [
     name: "Frank Harrison",
     role: "F. Manager",
     team: "Finance",
-    status: "vacation",
+    status: "paused",
     age: "33",
     email: "frank.harrison@example.com",
   },
