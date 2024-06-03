@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.19",
     "@nextui-org/button": "^2.0.31",
     "@nextui-org/card": "^2.0.28",
     "@nextui-org/dropdown": "^2.1.23",
@@ -16,11 +19,13 @@
     "@nextui-org/react": "^2.3.6",
     "@nextui-org/system": "^2.1.2",
     "@nextui-org/theme": "^2.2.3",
+    "@nextui-org/tooltip": "^2.0.35",
     "axios": "^1.7.2",
     "framer-motion": "^11.2.6",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
     "@types/node": "^20",
