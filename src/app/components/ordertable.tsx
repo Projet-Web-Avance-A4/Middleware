@@ -21,24 +21,26 @@ import {
     Tooltip
 } from "@nextui-org/react";
 import { FaPlus, FaCircleDot, FaChevronDown, FaMagnifyingGlass, FaRegTrashCan, FaPencil } from "react-icons/fa6"
-import { columns, users, statusOptions } from "../api/temp.data";
+import { columns, orders, statusOptions } from "../api/order.data";
 import { capitalize } from "../utils/capitalize";
 import ThemeSwitch from "../components/ThemeSwitch";
 
 interface Table {
+    showAction?: boolean
     showStatusAction?: boolean
     showDeleteAction?: boolean
     showEditAction?: boolean
 }
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
-    active: "success",
-    paused: "danger",
+    Registered: "success",
+    InPreparation: "danger",
+    InDelivery: "warning",
 };
 
-const INITIAL_VISIBLE_COLUMNS = ["name", "role", "status", "actions"];
+const INITIAL_VISIBLE_COLUMNS = ["codeOrder", "priceOrder", "status"];
 
-type User = typeof users[0];
+type User = typeof orders[0];
 
 export default function App(props: Table) {
     const [filterValue, setFilterValue] = React.useState("");
@@ -52,7 +54,7 @@ export default function App(props: Table) {
     });
     const [page, setPage] = React.useState(1);
 
-    const pages = Math.ceil(users.length / rowsPerPage);
+    const pages = Math.ceil(orders.length / rowsPerPage);
 
     const hasSearchFilter = Boolean(filterValue);
 
@@ -63,21 +65,21 @@ export default function App(props: Table) {
     }, [visibleColumns]);
 
     const filteredItems = React.useMemo(() => {
-        let filteredUsers = [...users];
+        let filteredorders = [...orders];
 
         if (hasSearchFilter) {
-            filteredUsers = filteredUsers.filter((user) =>
-                user.name.toLowerCase().includes(filterValue.toLowerCase()),
+            filteredorders = filteredorders.filter((user) =>
+                user.codeOrder.toLowerCase().includes(filterValue.toLowerCase()),
             );
         }
         if (statusFilter !== "all" && Array.from(statusFilter).length !== statusOptions.length) {
-            filteredUsers = filteredUsers.filter((user) =>
+            filteredorders = filteredorders.filter((user) =>
                 Array.from(statusFilter).includes(user.status),
             );
         }
 
-        return filteredUsers;
-    }, [users, filterValue, statusFilter]);
+        return filteredorders;
+    }, [orders, filterValue, statusFilter]);
 
     const items = React.useMemo(() => {
         const start = (page - 1) * rowsPerPage;
@@ -100,26 +102,26 @@ export default function App(props: Table) {
         const cellValue = user[columnKey as keyof User];
 
         switch (columnKey) {
-            case "name":
+            case "codeOrder":
                 return (
                     <User
                         classNames={{
                             description: "text-default-500",
                             name: "text-black"
                         }}
-                        description={user.email}
+                        description={user.codeOrder}
                         name={cellValue}
                     >
-                        {user.email}
+                        {user.codeOrder}
                     </User>
                 );
-            case "role":
-                return (
-                    <div className="flex flex-col">
-                        <p className="text-bold text-small capitalize text-black">{cellValue}</p>
-                        <p className="text-bold text-tiny capitalize text-default-500">{user.team}</p>
-                    </div>
-                );
+                case "priceOrder":
+                    return (
+                        <div className="flex flex-col">
+                        <p className="text-bold text-small capitalize">{cellValue}</p>
+                        <p className="text-bold text-tiny capitalize text-black">{user.priceOrder} €</p>
+                      </div>
+                    );
             case "status":
                 return (
                     <Chip
@@ -130,32 +132,6 @@ export default function App(props: Table) {
                     >
                         {cellValue}
                     </Chip>
-                );
-            case "actions":
-                return (
-                    <div className="relative flex justify-end items-center gap-2">
-
-                        {props.showStatusAction &&
-                        <ThemeSwitch/>
-                        }
-
-                        {props.showEditAction &&
-                        <Tooltip className="text-black" content="Modifier">
-                            <Button isIconOnly radius="full" size="sm" variant="light">
-                                <FaPencil className="text-default-400" />
-                            </Button>
-                        </Tooltip>
-                        }
-
-                        {props.showDeleteAction &&
-                        <Tooltip className="text-red" content="Supprimer">
-                            <Button isIconOnly radius="full" size="sm" variant="light">
-                                <FaRegTrashCan className="text-default-400 text-red" />
-                            </Button>
-                        </Tooltip>
-                        }
-
-                    </div>
                 );
             default:
                 return cellValue;
@@ -256,7 +232,7 @@ export default function App(props: Table) {
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Total {users.length} commande(s)</span>
+                    <span className="text-default-400 text-small">Total {orders.length} commande(s)</span>
                     <label className="flex items-center text-default-400 text-small">
                         Ligne(s) par page :
                         <select
@@ -277,7 +253,7 @@ export default function App(props: Table) {
         visibleColumns,
         onSearchChange,
         onRowsPerPageChange,
-        users.length,
+        orders.length,
         hasSearchFilter,
     ]);
 
@@ -355,9 +331,9 @@ export default function App(props: Table) {
                     </TableColumn>
                 )}
             </TableHeader>
-            <TableBody emptyContent={"No users found"} items={sortedItems}>
+            <TableBody emptyContent={"No orders found"} items={sortedItems}>
                 {(item) => (
-                    <TableRow key={item.id}>
+                    <TableRow key={item.idOrder}>
                         {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
                     </TableRow>
                 )}

@@ -28,7 +28,7 @@ export default function Home() {
       <div className="grid grid-cols-4 flex-grow place-content-center items-center h-80">
         <div className="col-span-1"></div>
         <div><CustomCard title="Clients" href="/clients" btnText="Accéder" icon={<FaUserLarge className="w-10 h-10" />}/></div>
-        <div><CustomCard title="Dashboard" href="#dashboardpage" btnText="Accéder" icon={<FaChartColumn className="w-10 h-10"/>}/></div>
+        <div><CustomCard title="Dashboard" href="/dashboard" btnText="Accéder" icon={<FaChartColumn className="w-10 h-10"/>}/></div>
       </div>
       {/* <div>
                 <a
