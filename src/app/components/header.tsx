@@ -24,13 +24,14 @@ export default function Header(props: Header) {
     return (
         <Navbar className="bg-red">
             <NavbarBrand>
-            <Image
+                <Link href={"/"}><p className="font-bold text-inherit ml-2 text-large flex items-center gap-2">
+                <Image
             src={ceseat}
             width={50}
             height={50}
             alt="Logo Ceseat"
             />
-                <Link href={"/"}><p className="font-bold text-inherit ml-2">CES&apos;Eat</p></Link>
+            CES&apos;Eat</p></Link>
             </NavbarBrand>
             <NavbarContent justify="center">
                 <p>{props.title}</p>
