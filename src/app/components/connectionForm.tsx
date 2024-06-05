@@ -38,7 +38,7 @@ const ConnectionForm: React.FC<{ changeForm: () => void }> = (props) => {
                 localStorage.setItem('accessToken', accessToken);
                 localStorage.setItem('refreshToken', refreshToken);
 
-                window.location.href = '/telechargements';
+                window.location.href = '/main';
             } else {
                 setAlertMessage('Échec de la connexion au compte');
                 setAlertType('error');

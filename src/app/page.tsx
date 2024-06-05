@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import RegisterForm from './components/registerForm';
+import RegisterForm from './components/registerform';
 import ConnectionForm from './components/connectionForm';
 import { NextUIProvider } from '@nextui-org/system';
 import Header from './components/header';
@@ -17,7 +17,7 @@ const Register: React.FC = () => {
 
     return (
         <NextUIProvider className="flex flex-col min-h-screen bg-beige">
-            <Header title={"Développeur"} />
+            <Header title={"Commercial"} />
             <div className='container mx-auto mt-6 flex-grow'>
                 {!connectPage &&
                     <div>
