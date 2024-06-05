@@ -1,6 +1,5 @@
 "use client";
 
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Alert } from '@mui/material';
 import { Input, Spacer, Button, Card, CardHeader, CardBody, Tooltip } from '@nextui-org/react';
@@ -41,28 +40,34 @@ const RegisterForm: React.FC<{ changeForm: () => void }> = (props) => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const response = await axios.post('http://localhost:3001/api/register', {
-            name,
-            surname,
-            mail,
-            phone,
-            street,
-            city,
-            postalCode,
-            password,
-            role,
-            status,
-            code_referral,
-            id_sponsor
-        }, {
+        const response = await fetch('http://localhost:3001/api/register', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify({
+                name,
+                surname,
+                mail,
+                phone,
+                street,
+                city,
+                postalCode,
+                password,
+                role,
+                status,
+                code_referral,
+                id_sponsor
+            })
         });
 
         if (response.status >= 200 && response.status < 300) {
             setAlertMessage('Création du compte réussie');
             setAlertType('success');
+            setTimeout(() => {
+                props.changeForm();
+            }, 1000);
+
         } else {
             setAlertMessage('Échec de la création du compte');
             setAlertType('error');

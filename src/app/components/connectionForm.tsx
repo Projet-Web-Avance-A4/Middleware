@@ -2,7 +2,6 @@ import { Alert } from '@mui/material';
 import { Button } from '@nextui-org/button';
 import { Card, CardBody, CardHeader, Input, Spacer } from '@nextui-org/react';
 import { NextUIProvider } from '@nextui-org/system';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { EyeSlashFilledIcon } from '../../../public/EyeSlashFilledIcon';
 import { EyeFilledIcon } from '../../../public/EyeFilledIcon';
@@ -26,14 +25,19 @@ const ConnectionForm: React.FC<{ changeForm: () => void }> = (props) => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/api/login', {
-                mail,
-                password
+            const response = await fetch('http://localhost:3001/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ mail, password })
             });
 
             if (response.status === 200) {
-                const { token } = response.data;
-                localStorage.setItem('token', token);
+                const { accessToken, refreshToken } = await response.json();;
+                localStorage.setItem('accessToken', accessToken);
+                localStorage.setItem('refreshToken', refreshToken);
+
                 window.location.href = '/telechargements';
             } else {
                 setAlertMessage('Échec de la connexion au compte');

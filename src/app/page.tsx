@@ -5,7 +5,7 @@ import RegisterForm from './components/registerForm';
 import ConnectionForm from './components/connectionForm';
 import { NextUIProvider } from '@nextui-org/system';
 import Header from './components/header';
-import { Button } from '@nextui-org/button';
+import Footer from './components/footer';
 
 const Register: React.FC = () => {
 
@@ -16,18 +16,21 @@ const Register: React.FC = () => {
     }
 
     return (
-        <NextUIProvider className="h-screen bg-beige">
+        <NextUIProvider className="flex flex-col min-h-screen bg-beige">
             <Header title={"Développeur"} />
-            {!connectPage &&
-                <div>
-                    <RegisterForm changeForm={changeForm} />
-                </div>
-            }
-            {connectPage &&
-                <div>
-                    <ConnectionForm changeForm={changeForm} />
-                </div>
-            }
+            <div className='container mx-auto mt-6 flex-grow'>
+                {!connectPage &&
+                    <div>
+                        <RegisterForm changeForm={changeForm} />
+                    </div>
+                }
+                {connectPage &&
+                    <div>
+                        <ConnectionForm changeForm={changeForm} />
+                    </div>
+                }
+            </div>
+            <Footer />
         </NextUIProvider>
     );
 };
