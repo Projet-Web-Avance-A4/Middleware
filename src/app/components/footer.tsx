@@ -1,23 +1,13 @@
 "use client";
-
-import {
-    Navbar,
-    NavbarBrand,
-    NavbarContent,
-    NavbarItem
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, DropdownSection } from "@nextui-org/react";
-import Link from "next/link";
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
 import { useState } from 'react';
 import LegalModal from '../components/credits';
 
-
-// Composant Header (entête)
+// Composant Footer (pied de page)
 export default function Footer() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    //Open and close credits modal
     function openModal() {
       setIsModalOpen(true);
     }
@@ -31,7 +21,7 @@ export default function Footer() {
             <div className="grid bg-lightGreen py-4">
                 <div className="grid flex justify-items-center">
                     <p className="font-bold">Contact</p>
-                    <p>Vous souhaitez en savoir plus ou nous rencontrer ?</p>
+                    <p>Vous souhaitez en savoir plus ou nous rencontrer ? </p>
                     <p> N'hésitez pas à nous contacter !</p>
                 </div>
                 <div className="grid justify-items-center ">
@@ -47,9 +37,6 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-
-
-
             <div className="flex bg-darkGreen py-2">
                 <div className="flex-1">©CES'EAT - 2024</div>
                 <div>
