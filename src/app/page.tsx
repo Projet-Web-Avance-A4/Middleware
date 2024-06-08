@@ -11,12 +11,11 @@ export default function Home() {
       <Header title="Portail de redirection" showMyAccount={false} showStats={false} showSponsor={false}/>
       <div className="flex-grow container ">
         <div className="grid place-content-center">
-          <PortalCard href="#" btnText="Client" />
-          <PortalCard href="#" btnText="Restaurateur" />
-          <PortalCard href="#" btnText="Livreur" />
-          <PortalCard href="#" btnText="Développeur" />
-          <PortalCard href="#" btnText="Service technique" />
-          <PortalCard href="#" btnText="Service commercial" />
+   {/*        <CustomCard title="Commandes" description="Suivre et valider des commandes" href="#" btnText="Accéder" /> */}
+          <PortalCard href="#" btnText="Client" port="3001"/>
+          <PortalCard href="#" btnText="Client" port="3001"/>
+          <PortalCard href="#" btnText="Client" port="3001"/>
+          <PortalCard href="#" btnText="Client" port="3001"/>
         </div>
       </div>
       <Footer/>
