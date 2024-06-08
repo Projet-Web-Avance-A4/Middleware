@@ -13,7 +13,7 @@ import Link from "next/link";
 interface Header {
     title: string
     showStats?: boolean
-    showSponsor?: boolean
+    showAccount?: boolean
 }
 
 // Composant Header (entête)
@@ -50,14 +50,12 @@ export default function Header(props: Header) {
                                 >
                                     <Link href={"/account"}>Mon compte</Link>
                                 </DropdownItem>
-                                {props.showSponsor &&
                                     <DropdownItem
                                         key="sponsor"
                                         description="Parrainer un ami"
                                     >
                                         Parrainage
                                     </DropdownItem>
-                                }
                             </DropdownSection>
                             <DropdownSection title="Danger">
                                 <DropdownItem

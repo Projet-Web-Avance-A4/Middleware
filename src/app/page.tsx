@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <NextUIProvider className="flex flex-col min-h-screen bg-beige">
-      <Header title="Portail de redirection" showStats={false} showSponsor={false} />
+      <Header title="Portail de redirection" showStats={false} showAccount={false} />
       <div className="flex-grow container">
         <div className="grid place-content-center">
           <PortalCard href={baseURL} port="3002" btnText="Client" />
