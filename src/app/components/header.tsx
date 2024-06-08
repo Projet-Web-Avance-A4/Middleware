@@ -10,7 +10,6 @@ import { Button } from "@nextui-org/button";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, DropdownSection } from "@nextui-org/react";
 import Link from "next/link";
 import React, { useState } from 'react';
-import DeleteUserModal from "./deleteUserModal";
 import Image from 'next/image';
 import ceseat from "../../../public/logo-ceseat.png";
 
@@ -111,7 +110,6 @@ export default function Header(props: Header) {
                     }
                 </NavbarItem>
             </NavbarContent>
-            <DeleteUserModal userMail={props.user?.mail} isOpen={isModalOpen} closeModal={closeModal} />
         </Navbar>
     );
 }

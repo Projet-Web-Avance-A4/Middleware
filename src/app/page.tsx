@@ -12,10 +12,10 @@ export default function Home() {
       <div className="flex-grow container ">
         <div className="grid place-content-center">
    {/*        <CustomCard title="Commandes" description="Suivre et valider des commandes" href="#" btnText="Accéder" /> */}
-          <PortalCard href="#" btnText="Client" />
-          <PortalCard href="#" btnText="Client" />
-          <PortalCard href="#" btnText="Client" />
-          <PortalCard href="#" btnText="Client" />
+          <PortalCard href="#" btnText="Client" port="3001"/>
+          <PortalCard href="#" btnText="Client" port="3001"/>
+          <PortalCard href="#" btnText="Client" port="3001"/>
+          <PortalCard href="#" btnText="Client" port="3001"/>
         </div>
       </div>
       <Footer/>
