@@ -12,7 +12,6 @@ interface iCustomCard {
   btnText: string
 }
 
-// Composant Card
 export default function CustomCard(props: iCustomCard) {
     return (
         <NextUIProvider>
