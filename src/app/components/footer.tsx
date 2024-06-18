@@ -1,12 +1,14 @@
 "use client";
 import { FaPhone, FaEnvelope } from 'react-icons/fa6';
 import { useState } from 'react';
-import LegalModal from '../components/credits';
+import LegalModal from './credits';
 
+
+
+// Composant Footer
 export default function Footer() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    //Open and close credits modal
     function openModal() {
         setIsModalOpen(true);
     }
@@ -18,7 +20,7 @@ export default function Footer() {
     return (
         <div className="text-black">
             <div className="grid bg-lightGreen py-1">
-                <div className="grid justify-items-center">
+                <div className="grid justify-items-center mx-2 text-center">
                     <p className="font-bold">Contact</p>
                     <p>Vous souhaitez en savoir plus ou nous rencontrer ?</p>
                     <p> N&apos;h&#233;sitez pas &#224; nous contacter&nbsp;!</p>
@@ -38,7 +40,7 @@ export default function Footer() {
             </div>
 
             <div className="flex bg-darkGreen py-1">
-                <div className="flex-1 ml-2">&copy;CES'EAT - 2024</div>
+                <div className="flex-1 ml-2">&copy;CES&apos;EAT - 2024</div>
                 <div>
                     <a
                         title="Consulter les mentions légales"
