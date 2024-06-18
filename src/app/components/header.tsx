@@ -27,7 +27,7 @@ export default function Header(props: iHeader) {
                             height={50}
                             alt="Logo Ceseat"
                         />
-                        <span className="hidden lg:inline">CES'Eat</span>
+                        <span className="hidden lg:inline">CES`&apos;`Eat</span>
                     </p>
                 </Link>
             </NavbarBrand>
