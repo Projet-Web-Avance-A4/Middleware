@@ -21,14 +21,15 @@
     "@nextui-org/system": "^2.1.2",
     "@nextui-org/table": "^2.0.35",
     "@nextui-org/theme": "^2.2.3",
-    "@svgr/webpack": "^8.1.0",
     "@nextui-org/tooltip": "^2.0.35",
+    "@svgr/webpack": "^8.1.0",
     "framer-motion": "^11.2.6",
     "jsonwebtoken": "^8.5.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.6",
